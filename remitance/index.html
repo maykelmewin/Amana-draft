@@ -1,0 +1,457 @@
+<html>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="../salaryCheck/img/alogo.png" />
+<title>Remitance</title>
+<style>
+.head{
+position:absolute;
+left: 73%;
+top: -8;
+}
+.calen{
+position:absolute;
+left: 87%;
+top:  21;
+width: 130;
+
+
+}
+
+.but{
+position:absolute;
+left: 68%;
+top:  22;
+}
+
+
+
+.size{
+height: 500px;
+width: 500px;
+position: absolute;
+right: 50%;
+top: 200;
+}
+
+
+#bal{
+display:none;
+}
+
+
+body {font-family: "Lato", sans-serif;}
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+   
+}
+
+
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+
+div.tab button.active {
+    background-color: #ccc;
+}
+
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+</style>
+</head>
+<body>
+<h1 class="head">Remitance</h1>
+<input type="date" class="calen">
+<!-- <button class="but">Remit</button> -->
+
+
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">Ticket</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Cash</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Balance</button>
+  
+</div>
+
+<div  id="London" class="tabcontent">
+<center>
+ <br/><br/><br/>
+<table style="width:300;">
+
+<tr><td>
+  <p>Sold Adult Ticket</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input value="0" min="0" id="sat"  style=" width: 50;" readonly>
+</td></tr>
+<tr><td>
+  <p>Sold Child Ticket</p>
+</td><td colspan="2">
+   &nbsp &nbsp &nbsp &nbsp <input value="0" min="0" id="sct" style=" width: 50;" readonly>
+</td></tr>
+<tr><td>
+  <p>Total Head Count</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input  value="0" min="0" id="thc" style=" width: 50;" readonly>
+</td></tr>
+<tr><td>
+
+</td><td>
+<p>Issued</p>
+</td><td>
+<p>Left</p>
+</td></tr>
+<tr><td>
+<p>Adult Tickets</p>
+</td><td>
+<input  value="0" type="number" id="ai" min="0" style=" width: 50;" >
+</td><td>
+<input  value="0" type="number" id="al" min="0" style=" width: 50;" >
+</td></tr>
+<tr><td>
+<p>Child Tickets</p>
+</td><td>
+<input  value="0" type="number" id="ci" min="0" style=" width: 50;">
+</td><td>
+<input  value="0" type="number" id="cl"  min="0" style=" width: 50;" >
+</td></tr>
+</table>
+<br/>
+<button onclick="ttc()">Compute</button>
+<h2>Total Cash:</h2>
+<h1 id="ttc" style="size:4en">0<h1>
+<center>
+</div>
+
+<div  id="Paris" class="tabcontent">
+
+
+
+ <center>
+ <br/><br/><br/>
+<table style="width:300;">
+
+<tr><td>
+  <p>P1000.00</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number" min="0" value="0" id="onet"  style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+  <p>P500.00</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number" min="0" value="0" id="fiveh"  style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+  <p>P200.00</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number" min="0" value="0" id="twoh"  style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+  <p>P100.00</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number" min="0" value="0" id="oneh" style=" width: 50;" > 
+</td></tr>
+
+<tr><td>
+  <p>P50.00</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number" min="0" value="0" id="fivety"  style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+  <p>P20.00</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number" min="0" value="0" id="twoty" style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+  <p>P10.00</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number"  min="0" value="0" id="onety" style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+  <p>P5.00</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number" min="0"  value="0" id="five"  style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+  <p>P1.00</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number" min="0" value="0" id="one" style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+  <p>P0.25</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input type="number" min="0" value="0" id="twofive" style=" width: 50;" >
+</td></tr>
+</table>
+<br/>
+<button onclick="tc()">Compute</button>
+<h2>Total Cash:</h2>
+<h1 id="tc"></h1>
+<center>
+</div>
+
+<div  id="Tokyo" class="tabcontent">
+ 
+
+ <center>
+ <br/><br/><br/>
+<table style="width:300;">
+
+<tr><td>
+  <p>Total Cash for Tickets</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input value="0" min="0" id="tct"  style=" width: 50;" readonly>
+</td></tr>
+
+<tr><td>
+  <p>Your Cash</p>
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input value="0" min="0" id="yc" style=" width: 50;" readonly>
+</td></tr>
+
+<tr><td>
+<input   placeholder="Other Cash" style=" width: 150;">
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input value="0" id="num1"  style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+ <input placeholder="Other Cash" style=" width: 150;">
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input value="0" id="num2"  min="0" style=" width: 50;" >
+</td></tr>
+
+<tr><td>
+  <input placeholder="Other Cash" style=" width: 150;" >
+</td><td colspan="2">
+  &nbsp &nbsp &nbsp &nbsp  <input value="0" id="num3" min="0" style=" width: 50;">
+</td></tr>
+
+</table>
+<br/>
+<button onclick="balance()">Balance</button>
+<div>
+<h2>Total Cash:</h2>
+<h1 id="comment" style="size:4en">0<h1>
+</div>
+<center>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+     
+
+<script>
+
+function balance(){
+var tic = document.getElementById("tct").value;
+var cas = document.getElementById("yc").value;
+var num1= document.getElementById("num1").value;
+var num2= document.getElementById("num2").value;
+var num3= document.getElementById("num3").value;
+
+
+var tic = parseInt(tic);
+var cas = parseInt(cas);
+var num1 = parseInt(num1);
+var num2 = parseInt(num2);
+var num3 = parseInt(num3);
+
+
+var tcas = cas + num1 + num2 + num3;
+
+var dif = tcas- tic;
+
+
+if(tic < 0 || cas < 0 || num1< 0|| num2< 0 || num3< 0){
+alert("WRONG INPUT");
+return;
+}
+
+
+if(isNaN(tic) || isNaN(cas) || isNaN(num1) || isNaN(num2) || isNaN(num3) ){
+alert("WRONG INPUT");
+return;
+}
+
+
+
+
+
+
+if(dif == 0){
+document.getElementById("comment").innerHTML = "TALLY";
+}
+
+else if(dif > 0 ){
+document.getElementById("comment").innerHTML = "EXCESS" + " " +"of" + " " + dif;
+}
+
+else if(dif < 0 ){
+document.getElementById("comment").innerHTML = "SHORT" +  " "  + "of" + " " + Math.abs(dif);
+}
+
+
+
+}
+
+
+function tc(){
+var  a= document.getElementById("onet").value;
+var b= document.getElementById("fiveh").value;
+var c= document.getElementById("twoh").value;
+var d= document.getElementById("oneh").value;
+var  e= document.getElementById("fivety").value;
+var f= document.getElementById("twoty").value;
+var  g= document.getElementById("onety").value;
+var h= document.getElementById("five").value;
+var  i= document.getElementById("one").value;
+var j= document.getElementById("twofive").value;
+
+
+
+
+
+var a = parseInt(a);
+var b = parseInt(b);
+var c = parseInt(c);
+var d = parseInt(d);
+var e = parseInt(e);
+var f = parseInt(f);
+var g = parseInt(g);
+var h = parseInt(h);
+var i = parseInt(i);
+var j = parseInt(j);
+
+
+
+var a1 = a * 1000;
+var b1 = b * 500;
+var c1 = c * 200;
+var d1 = d * 100;
+var e1 = e * 50;
+var f1 = f * 20;
+var g1 = g * 10;
+var h1 = h * 5;
+var i1 = i * 1;
+var j1= j * .25;
+
+
+var k= a1 + b1 + c1 + d1 + e1 + f1 + g1 + h1 + i1 + j1;
+
+if (a < 0 || b < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0 || g < 0 || i < 0 || h < 0 || j < 0){
+alert("WRONG INPUT");
+return;
+}
+
+if ( isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d) || isNaN(e) || isNaN(f) || isNaN(g) || isNaN(h) || isNaN(i) || isNaN(j)){
+alert("INPUT NUMBER");
+return;
+}
+
+
+document.getElementById("tc").innerHTML= "P" + k;
+document.getElementById("yc").value = k;
+}
+
+
+
+
+function ttc(){
+
+var z = document.getElementById("ai").value;
+var x= document.getElementById("al").value;
+var y= document.getElementById("ci").value;
+var w= document.getElementById("cl").value;
+
+
+var z = parseInt(z);
+var x = parseInt(x);
+var y = parseInt(y);
+var w = parseInt(w);
+
+
+var com1= z -x;
+var com2= y-w; 
+
+var adu = com1 * 250;
+var chi = com2 * 200;
+var ttc= adu + chi;
+
+
+if (z < 0 || x < 0 || y < 0 || w < 0 || x > z || w > z ) {
+alert("WRONG INPUT");
+return;
+}
+
+if ( isNaN(z) || isNaN(x) || isNaN(y) || isNaN(w)){
+alert("INPUT NUMBER");
+return;
+}
+
+
+document.getElementById("sat").value =  com1 ;
+document.getElementById("sct").value =  com2 ;
+document.getElementById("thc").value = com1 + com2;
+
+document.getElementById("ttc").innerHTML= "P" + ttc;
+document.getElementById("tct").value = ttc;
+}
+
+</script>
+</body>
+</html>
